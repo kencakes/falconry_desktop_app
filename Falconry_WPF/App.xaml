@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Falconry_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Page.xaml"/>
+                <ResourceDictionary Source="Themes/Button.xaml"/>
+                <ResourceDictionary Source="Themes/Image.xaml"/>
+                <ResourceDictionary Source="Themes/Text.xaml"/>
+                <ResourceDictionary Source="Utilities/DataTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
     </Application.Resources>
 </Application>
