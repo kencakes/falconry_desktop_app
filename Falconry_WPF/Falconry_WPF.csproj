@@ -167,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Models\Bird.cs" />
+    <Compile Include="Models\Logbook.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Utilities\Button.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
@@ -287,7 +291,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Fonts\Poppins-Regular.ttf" />
     <Resource Include="Assets\Images\bird.png">
