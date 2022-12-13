@@ -3,10 +3,66 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Falconry_WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:vm="clr-namespace:Falconry_WPF.ViewModels"
+        xmlns:Menu="clr-namespace:Falconry_WPF.Utilities"
+        mc:Ignorable="d" WindowState="Maximized" Background="#212529">
+    
+    <!-- Specify the VM -->
+    <Window.DataContext>
+        <vm:NavigationViewModel/>
+    </Window.DataContext>
+    
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228"/>
+            <ColumnDefinition Width="622"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Navigation Menu -->
+        <!-- Background side panel -->
+        <Grid HorizontalAlignment="Left" Width="228">
+            <Border Background="#272B2F" CornerRadius="20 0 0 20"/>
+            
+            <!-- Stack panel inside the side panel -->
+            <StackPanel Height="400" Width="228" VerticalAlignment="Top" Margin="0 20 0 0">
+            <!-- Menu items -->
+            <!-- Home -->
+            <Menu:Button Style="{StaticResource BtnStyle}" Command="{Binding HomeCommand}" IsChecked="True">
+                <Grid>
+                    <Image Source="/Assets/Images/home.png" Style="{StaticResource Image_Style}"/>
+                    <TextBlock Text="Home" Style="{StaticResource Text_Style}"/>
+                </Grid>
+            </Menu:Button>
+            
+            <!-- Bird  -->
+            <Menu:Button Style="{StaticResource BtnStyle}" Command="{Binding BirdCommand}">
+                <Grid>
+                    <Image Source="/Assets/Images/bird.png" Style="{StaticResource Image_Style}"/>
+                    <TextBlock Text="Bird" Style="{StaticResource Text_Style}"/>
+                </Grid>
+            </Menu:Button>
+            
+            <!-- Logbook -->
+            <Menu:Button Style="{StaticResource BtnStyle}" Command="{Binding LogbookCommand}">
+                <Grid>
+                    <Image Source="/Assets/Images/book.png" Style="{StaticResource Image_Style}"/>
+                    <TextBlock Text="Logbook" Style="{StaticResource Text_Style}"/>
+                </Grid>
+            </Menu:Button>
+            
+            <!-- Hunting -->
+            <Menu:Button Style="{StaticResource BtnStyle}" Command="{Binding HuntingCommand}">
+                <Grid>
+                    <Image Source="/Assets/Images/hunting.png" Style="{StaticResource Image_Style}"/>
+                    <TextBlock Text="Hunting" Style="{StaticResource Text_Style}"/>
+                </Grid>
+            </Menu:Button>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+        </Grid>
         
     </Grid>
 </Window>
