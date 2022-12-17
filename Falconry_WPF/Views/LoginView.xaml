@@ -3,10 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Falconry_WPF.Views"
+             xmlns:vm="clr-namespace:Falconry_WPF.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" >
+    
+    <UserControl.DataContext>
+        <vm:LoginViewModel/>
+    </UserControl.DataContext>
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Content="Welcome Falconer" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="#ffffff"/>
+        <Label Content="Log in here" HorizontalAlignment="Center" FontSize="12" Foreground="#ffffff"/>
+
+        <Label Content="Username" FontSize="12" Margin="0 10 0 0" HorizontalAlignment="Center" Foreground="#ffffff"/>
+        <TextBox x:Name="UsernameTb" Text="{Binding Username}" Foreground="#ffffff" Background="#272B2F"/>
+
+        <Label Content="Password" FontSize="12" Margin="0 10 0 0" HorizontalAlignment="Center" Foreground="#ffffff"/>
+        <TextBox x:Name="PasswordTb"  Text="{Binding Password}" Foreground="#ffffff" Background="#272B2F"/>
+
+        <Button Content="Forgot Password?" Command="{Binding Path=ResetPasswordCommand}" HorizontalAlignment="Center" FontSize="11" Margin="0 8 0 0" Foreground="#ffffff">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="LoginBtn" Content="Submit" Background="#272B2F" Foreground="#ffffff" Height="25" BorderThickness="0" Margin="0 20 0 0" Command="{Binding Path=SubmitCommand}"/>
+        <Button x:Name="RegisterBBtn" Content="Register" Background="#272B2F" Foreground="#ffffff" Height="25" BorderThickness="0" Margin="0 5 0 0" Command="{Binding Path=RegisterCommand}"/>
+    </StackPanel>
 </UserControl>
