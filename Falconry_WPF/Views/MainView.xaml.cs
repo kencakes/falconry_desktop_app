@@ -2,9 +2,9 @@
 
 namespace Falconry_WPF.Views
 {
-    public partial class RegisterView : Window
+    public partial class MainView : Window
     {
-        public RegisterView()
+        public MainView()
         {
             InitializeComponent();
         }
