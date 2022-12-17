@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using Falconry_WPF.Data;
@@ -18,6 +19,7 @@ namespace Falconry_WPF.ViewModels
 
         public string Username { get; set; }
         public string Password { get; set; }
+        
         public User User { get; set; }
 
 
@@ -34,19 +36,19 @@ namespace Falconry_WPF.ViewModels
 
         private void Login()
         {
+            User u = new User();
             using (DataContext context = new DataContext())
             {
                 bool userfound = context.Users.Any(user => user.Username == Username && user.Password == Password);
 
                 if (userfound)
                 {
-                    /*
-                    User user = new User();
-                    user = context.Users.Find(1);
-
+                    u = context.Users.SingleOrDefault(user => user.Username == Username);
+                    
+                    NavigationViewModel vm = new NavigationViewModel(u);
                     Views.MainView view = new Views.MainView();
+                    view.DataContext = vm;
                     view.Show();
-                    */
                 }
                 else
                 {

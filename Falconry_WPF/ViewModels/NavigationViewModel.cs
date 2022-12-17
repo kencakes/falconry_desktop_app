@@ -13,7 +13,7 @@ namespace Falconry_WPF.ViewModels
     class NavigationViewModel: ViewModelBase
     {
         private object _currentView;
-        //public User User { get; set; }
+        public User User { get; set; }
 
         public object CurrentView
         {
@@ -41,9 +41,9 @@ namespace Falconry_WPF.ViewModels
         private void Logbook(object obj) => CurrentView = new LogbookViewModel();
 
 
-        public NavigationViewModel()
+        public NavigationViewModel(User u)
         {
-            //this.User = user;
+            this.User = u;
             
             HomeCommand = new RelayCommand(Home);
             BirdCommand = new RelayCommand(Bird);

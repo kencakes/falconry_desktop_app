@@ -7,10 +7,6 @@
         xmlns:Menu="clr-namespace:Falconry_WPF.Utilities"
         mc:Ignorable="d"
         WindowState="Maximized" Background="#212529">
-    <!-- Specify the VM -->
-    <Window.DataContext>
-        <vm:NavigationViewModel/>
-    </Window.DataContext>
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -30,7 +26,7 @@
                 <Menu:Button Style="{StaticResource BtnStyle}">
                     <Grid>
                         <Image Source="/Assets/Images/user.png" Style="{StaticResource Image_Style}"/>
-                        <TextBlock Text="dfsdf" Style="{StaticResource Text_Style}" />
+                        <TextBlock Text="{Binding Path=User.Username}" Style="{StaticResource Text_Style}" />
                     </Grid>
                 </Menu:Button>
                 
