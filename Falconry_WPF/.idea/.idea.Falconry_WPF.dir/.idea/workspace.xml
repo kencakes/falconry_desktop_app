@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4ac743-30a7-4691-a020-1910a068754f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/MainView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/MainView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Falconry_WPF.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Falconry_WPF.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utilities/DataTemplate.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities/DataTemplate.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/LoginView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/LoginView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/RegisterViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/RegisterViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/HomeView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/HomeView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/HomeView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/HomeView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/LoginView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/LoginView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/RegisterView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/RegisterView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/RegisterView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/RegisterView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/ResetPasswordView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/ResetPasswordView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/ResetPasswordView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/ResetPasswordView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +32,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6c5c3dcdf51c4eb8916af6dcb8f91b631df48/6a/71104e4e/KeyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/90ee3cbb9dbb439fb2a3106cefde0581564d90/5f/f657aca9/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99f34ec5afd41f934c9189792e189b0fc486f6cfb7716f14f8e1aed88784/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vansa/Desktop/falconry_desktop_app/Falconry_WPF/Utilities/DataTemplate.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vansa/Desktop/falconry_desktop_app/Falconry_WPF/Views/HomeView.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vansa/Desktop/falconry_desktop_app/Falconry_WPF/Views/HomeView.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +94,7 @@
       <workItem from="1670877455865" duration="15000" />
       <workItem from="1670877482155" duration="8516000" />
       <workItem from="1670930373338" duration="8089000" />
-      <workItem from="1671265528719" duration="5174000" />
+      <workItem from="1671265528719" duration="13555000" />
     </task>
     <servers />
   </component>
@@ -105,5 +116,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/NavigationViewModel.cs</url>
+          <line>45</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\NavigationViewModel.cs" initialLine="46" containingFunctionPresentation="constructor 'NavigationViewModel'">
+            <startOffsets>
+              <option value="1345" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1362" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
