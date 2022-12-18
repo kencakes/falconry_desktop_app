@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:Falconry_WPF.Views"
+                    xmlns:vm="clr-namespace:Falconry_WPF.ViewModels">
+
+    <!-- To link VMs with Views -->
+    <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+        <view:HomeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:BirdViewModel}">
+        <view:BirdView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:HuntingViewModel}">
+        <view:HuntingView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:LogbookViewModel}">
+        <view:LogbookView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:RegisterViewModel}">
+        <view:RegisterView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ResetPasswordViewModel}">
+        <view:ResetPasswordView/>
+    </DataTemplate>
+    
+</ResourceDictionary>
