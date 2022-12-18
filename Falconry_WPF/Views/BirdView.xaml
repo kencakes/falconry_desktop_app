@@ -6,6 +6,7 @@
              xmlns:vm="clr-namespace:Falconry_WPF.ViewModels"
              xmlns:dc="clr-namespace:Falconry_WPF.Utilities"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="450">
     <Grid Margin="50 20 15 40">
@@ -14,7 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -28,7 +29,13 @@
         
         <!-- Birds Combobox -->
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
-            <ComboBox ItemsSource="{Binding Birds}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedBird, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True"/>
+            <ComboBox ItemsSource="{Binding Birds}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedBird, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
         </Grid>
         
         <!-- Section title -->
@@ -36,18 +43,17 @@
         
         <!-- Labels -->
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" VerticalAlignment="Top" Margin="0 15 0 15">
-            <dc:DataCard Title="Weight" Number="{Binding Weight}" Icon="ScaleUnbalanced" Background1="#827bff" Background2="#d9b5ff" EllipseBackground1="#b298fd" EllipseBackground2="#e4bbff"/>
-            <dc:DataCard Title="Weight After" Number="{Binding WeightAfter}" Icon="ScaleUnbalanced" Background1="#fd8a87" Background2="#f3ab92" EllipseBackground1="#fbd5a8" EllipseBackground2="#fdb89b"/>
-            <dc:DataCard Title="Food" Number="{Binding FoodAmount}" Icon="BowlFood" Background1="#fc84cb" Background2="#fc8fae" EllipseBackground1="#fc8fae" EllipseBackground2="#ffabe6"/>
+            <dc:DataCard Title="Weight" Number="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Icon="ScaleUnbalanced" Background1="#827bff" Background2="#d9b5ff"/>
+            <dc:DataCard Title="Weight After" Number="{Binding WeightAfter}" Icon="ScaleUnbalanced" Background1="#fd8a87" Background2="#f3ab92"/>
+            <dc:DataCard Title="Food" Number="{Binding FoodAmount, UpdateSourceTrigger=PropertyChanged}" Icon="BowlFood" Background1="#fc84cb" Background2="#fc8fae"/>
         </StackPanel>
         
-        <!-- Datagrid Logbook - Last 7 days? -->
-        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding Logbooks}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding Logbooks, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" Margin="0 0 0 15">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding DateTime}" Header="Date"/>
-                <DataGridTextColumn Binding="{Binding Weight}" Header="Weight"/>
-                <DataGridTextColumn Binding="{Binding WeightAfter}" Header="WeightAfter"/>
-                <DataGridTextColumn Binding="{Binding FoodAmount}" Header="Food Amount"/>
+                <DataGridTextColumn Binding="{Binding DateTime, UpdateSourceTrigger=PropertyChanged}" Header="Date"/>
+                <DataGridTextColumn Binding="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Header="Weight"/>
+                <DataGridTextColumn Binding="{Binding WeightAfter, UpdateSourceTrigger=PropertyChanged}" Header="WeightAfter"/>
+                <DataGridTextColumn Binding="{Binding FoodAmount, UpdateSourceTrigger=PropertyChanged}" Header="Food Amount"/>
                 <DataGridTextColumn Binding="{Binding Activity}" Header="Activity"/>
                 <DataGridTextColumn Binding="{Binding Comment}" Header="Comments"/>
                 <DataGridTextColumn Binding="{Binding Vitamins}" Header="Vitamins"/>

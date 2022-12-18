@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4ac743-30a7-4691-a020-1910a068754f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Images/logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utilities/DataCard.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utilities/DataCard.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Falconry_WPF.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Falconry_WPF.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Bird.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Bird.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Logbook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Logbook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/BirdView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/BirdView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +84,7 @@
       <workItem from="1671265528719" duration="14307000" />
       <workItem from="1671306613128" duration="14713000" />
       <workItem from="1671353530560" duration="8429000" />
-      <workItem from="1671362083389" duration="9880000" />
+      <workItem from="1671362083389" duration="14952000" />
     </task>
     <servers />
   </component>
@@ -120,42 +110,77 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
-          <line>16</line>
-          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="16" containingFunctionPresentation="property 'SelectedBird'">
-            <startOffsets>
-              <option value="503" />
-              <option value="508" />
-            </startOffsets>
-            <endOffsets>
-              <option value="507" />
-              <option value="512" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
-          <line>24</line>
-          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="24" containingFunctionPresentation="property 'Logbooks'">
-            <startOffsets>
-              <option value="858" />
-              <option value="863" />
-            </startOffsets>
-            <endOffsets>
-              <option value="862" />
-              <option value="867" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="System.FormatException" isInternal="false" displayValue="FormatException" namespaceName="System">
             <option name="internal" value="false" />
           </properties>
           <option name="timeStamp" value="9" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>118</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="115" containingFunctionPresentation="method 'CreateBird'">
+            <startOffsets>
+              <option value="4307" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4358" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>113</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="110" containingFunctionPresentation="method 'CreateBird'">
+            <startOffsets>
+              <option value="4161" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4178" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>114</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="111" containingFunctionPresentation="method 'CreateBird'">
+            <startOffsets>
+              <option value="4195" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4214" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>115</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="112" containingFunctionPresentation="method 'CreateBird'">
+            <startOffsets>
+              <option value="4231" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4250" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>116</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="113" containingFunctionPresentation="method 'CreateBird'">
+            <startOffsets>
+              <option value="4267" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4289" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
