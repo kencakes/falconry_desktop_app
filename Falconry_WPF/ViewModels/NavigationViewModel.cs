@@ -7,6 +7,7 @@ using Falconry_WPF.Data;
 using Falconry_WPF.Models;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Internal;
+using Application = System.Windows.Application;
 
 namespace Falconry_WPF.ViewModels
 {
@@ -33,10 +34,11 @@ namespace Falconry_WPF.ViewModels
         public ICommand BirdCommand { get; set; }
         public ICommand HuntingCommand { get; set; }
         public ICommand LogbookCommand { get; set; }
+        public ICommand LogoutCommand { get; set; }
         
 
         private void Home(object obj) => CurrentView = new HomeViewModel();
-        private void Bird(object obj) => CurrentView = new BirdViewModel();
+        private void Bird(object obj) => CurrentView = new BirdViewModel(User);
         private void Hunting(object obj) => CurrentView = new HuntingViewModel();
         private void Logbook(object obj) => CurrentView = new LogbookViewModel();
 
@@ -49,11 +51,26 @@ namespace Falconry_WPF.ViewModels
             BirdCommand = new RelayCommand(Bird);
             HuntingCommand = new RelayCommand(Hunting);
             LogbookCommand = new RelayCommand(Logbook);
+            LogoutCommand = new RelayCommand(Logout);
 
             // Startup page
             CurrentView = new HomeView();
         }
-        
-        
+
+        public void Logout(object obj)
+        {
+            // Sets the user to null, user gets logged out
+            this.User = null;
+            
+            // Opens login window
+            LoginViewModel vm = new LoginViewModel();
+            MainWindow view = new MainWindow();
+            view.DataContext = vm;
+            view.Show();
+            
+            // Closes the homeview
+            var window = Application.Current.Windows[1];
+            window.Hide();
+        }
     }
 }

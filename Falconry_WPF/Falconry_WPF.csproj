@@ -187,6 +187,9 @@
     <Compile Include="Models\Logbook.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Utilities\Button.cs" />
+    <Compile Include="Utilities\DataCard.xaml.cs">
+      <DependentUpon>DataCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModels\BirdViewModel.cs" />
@@ -218,6 +221,9 @@
     <Compile Include="Views\ResetPasswordView.xaml.cs">
       <DependentUpon>ResetPasswordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -246,6 +252,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Utilities\DataCard.xaml" />
     <Page Include="Utilities\DataTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -266,6 +273,7 @@
     <Page Include="Views\MainView.xaml" />
     <Page Include="Views\RegisterView.xaml" />
     <Page Include="Views\ResetPasswordView.xaml" />
+    <Page Include="Views\test.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -296,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Fonts\Poppins-Regular.ttf" />
+    <Content Include="Assets\Images\logout.png" />
     <Content Include="Assets\Images\user.png" />
     <Resource Include="Assets\Images\bird.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

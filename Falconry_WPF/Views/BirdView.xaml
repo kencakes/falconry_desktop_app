@@ -4,14 +4,72 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:Falconry_WPF.ViewModels"
+             xmlns:dc="clr-namespace:Falconry_WPF.Utilities"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800 Style={StaticResource Page_Style}" Style="{StaticResource Page_Style}">
-    <UserControl.DataContext>
-        <vm:BirdViewModel/>
-    </UserControl.DataContext>
-    <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Bird Page"></TextBlock>
+             d:DesignHeight="450">
+    <Grid Margin="50 20 15 40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Birds Combobox -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <ComboBox ItemsSource="{Binding Birds}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedBird, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </Grid>
+        
+        <!-- Section title -->
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="Today's data" FontSize="40" Foreground="#ffffff"/>
+        
+        <!-- Labels -->
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" VerticalAlignment="Top" Margin="0 15 0 15">
+            <dc:DataCard Title="Weight" Number="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Icon="ScaleUnbalanced" Background1="#827bff" Background2="#d9b5ff"/>
+            <dc:DataCard Title="Weight After" Number="{Binding WeightAfter}" Icon="ScaleUnbalanced" Background1="#fd8a87" Background2="#f3ab92"/>
+            <dc:DataCard Title="Food" Number="{Binding FoodAmount, UpdateSourceTrigger=PropertyChanged}" Icon="BowlFood" Background1="#fc84cb" Background2="#fc8fae"/>
         </StackPanel>
+        
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding Logbooks, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" Margin="0 0 0 15">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding DateTime, UpdateSourceTrigger=PropertyChanged}" Header="Date"/>
+                <DataGridTextColumn Binding="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Header="Weight"/>
+                <DataGridTextColumn Binding="{Binding WeightAfter, UpdateSourceTrigger=PropertyChanged}" Header="WeightAfter"/>
+                <DataGridTextColumn Binding="{Binding FoodAmount, UpdateSourceTrigger=PropertyChanged}" Header="Food Amount"/>
+                <DataGridTextColumn Binding="{Binding Activity}" Header="Activity"/>
+                <DataGridTextColumn Binding="{Binding Comment}" Header="Comments"/>
+                <DataGridTextColumn Binding="{Binding Vitamins}" Header="Vitamins"/>
+            </DataGrid.Columns>
+        </DataGrid>
+  
+        <Label Grid.Row="4" Grid.Column="0" Content="Name" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#ffffff"/>
+        <Label Grid.Row="4" Grid.Column="1" Content="Breed" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#ffffff"/>
+        <Label Grid.Row="4" Grid.Column="2" Content="Latin" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Foreground="#ffffff"/>
+
+        <TextBox Grid.Row="5" Grid.Column="0" x:Name="NameTb"  Text="{Binding Name}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="BreedTb"  Text="{Binding Breed}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        <TextBox Grid.Row="5" Grid.Column="2" x:Name="LatinTb"  Text="{Binding Latin}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        
+        <Button Grid.Row="5" Grid.Column="3" x:Name="AddBtn" Content="Add Bird" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=AddBirdCommand}" Margin="5"/>
+        <Button Grid.Row="6" Grid.Column="0" x:Name="DeleteBtn" Content="Delete" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=DeleteBirdCommand}" Margin="5"/>
+        <Button Grid.Row="6" Grid.Column="1" x:Name="UpdateBtn" Content="Update" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=UpdateBirdCommand}" Margin="5"/>
     </Grid>
 </UserControl>

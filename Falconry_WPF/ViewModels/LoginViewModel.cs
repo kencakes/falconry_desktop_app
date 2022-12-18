@@ -49,6 +49,10 @@ namespace Falconry_WPF.ViewModels
                     Views.MainView view = new Views.MainView();
                     view.DataContext = vm;
                     view.Show();
+                    
+                    // Close login window
+                    var window = Application.Current.Windows[0];
+                    window.Hide();
                 }
                 else
                 {
