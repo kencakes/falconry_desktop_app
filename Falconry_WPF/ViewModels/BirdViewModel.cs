@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Falconry_WPF.Data;
 using Falconry_WPF.Models;
@@ -21,36 +18,55 @@ namespace Falconry_WPF.ViewModels
         public string Name { get; set; }
         public string Breed { get; set; }
         public string Latin { get; set; }
+        public int Weight { get; set; }
+        public int WeightAfter { get; set; }
+        public string FoodAmount { get; set; }
         public List<Bird> Birds { get; set; }
+        public List<Logbook> Logbooks { get; set; }
+       
 
         public BirdViewModel(User user)
         {
             this.User = user;
 
-            AddBirdCommand = new RelayCommand(Create);
-            DeleteBirdCommand = new RelayCommand(Delete);
-            UpdateBirdCommand = new RelayCommand(Update);
+            AddBirdCommand = new RelayCommand(CreateBird);
+            DeleteBirdCommand = new RelayCommand(DeleteBird);
+            UpdateBirdCommand = new RelayCommand(UpdateBird);
 
             using (DataContext context = new DataContext())
             {
-                // TODO: Search by user Id
-                Birds = context.Birds.ToList();
+                // Get users  birds
+                Birds = context.Birds.Where(birds => birds.UserId == User.Id).ToList();
+                SelectedBird = Birds[0];
+                
+                // TODO: Only run this if the birds list isn't empty
+                // Get the selected birds logbooks
+                Logbooks = context.Logbooks.Where(logbooks => logbooks.BirdId == SelectedBird.Id).ToList();
+                
+                // Gets the newest values for the selected bird
+                Weight = Logbooks[Logbooks.Count - 1].Weight;
+                WeightAfter = Logbooks[Logbooks.Count - 1].WeightAfter;
+                FoodAmount = Logbooks[Logbooks.Count - 1].FoodAmount;
             }
         }
-
-        public void Create()
+        
+        
+        public void CreateBird()
         {
             using (DataContext context = new DataContext())
             {
-                string name = this.Name;
-                string breed = this.Breed;
-                string latin = this.Latin;
+                Bird bird = new Bird();
+                bird.Name = Name;
+                bird.Breed = Breed;
+                bird.Latin = Latin;
+                bird.UserId = User.Id;
 
-                if (name != null && breed != null && latin != null)
+                if (Name != null && Breed != null && Latin != null)
                 {
                     // TODO: Write to user id
-                    context.Birds.Add(new Bird() { Name = name, Breed = breed, Latin = latin});
+                    context.Birds.Add(bird);
                     context.SaveChanges();
+                    MessageBox.Show("Bird added");
                     Refresh();
                 }
                 else
@@ -60,15 +76,15 @@ namespace Falconry_WPF.ViewModels
             }
         }
 
-        public void Update()
+        public void UpdateBird()
         {
+            string name = this.Name;
+            string breed = this.Breed;
+            string latin = this.Latin;
+            
             using (DataContext context = new DataContext())
             {
                 Bird selectedBird = SelectedBird as Bird;
-                string name = this.Name;
-                string breed = this.Breed;
-                string latin = this.Latin;
-
                 if (name != null && breed != null && latin != null)
                 {
                     Bird bird = context.Birds.Find(selectedBird.Id);
@@ -77,11 +93,12 @@ namespace Falconry_WPF.ViewModels
                     bird.Latin = latin;
                     context.SaveChanges();
                     Refresh();
+                    Clear();
                 }
             }
         }
 
-        public void Delete()
+        private void DeleteBird()
         {
             using (DataContext context = new DataContext())
             {
@@ -93,11 +110,12 @@ namespace Falconry_WPF.ViewModels
                     context.Remove(bird);
                     context.SaveChanges();
                     Refresh();
+                    Clear();
                 }
             }
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             using (DataContext context = new DataContext())
             {
@@ -105,6 +123,12 @@ namespace Falconry_WPF.ViewModels
                 Birds = context.Birds.ToList();
             }
         }
-        
+        // TODO: Clear method to empty fields after create/delete/update
+        private void Clear()
+        {
+            this.Name = null;
+            this.Breed = null;
+            this.Latin = null;
+        }
     }
 }

@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4ac743-30a7-4691-a020-1910a068754f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/test.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/test.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utilities/DataCard.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utilities/DataCard.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Falconry_WPF.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Falconry_WPF.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Bird.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Bird.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Logbook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Logbook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/BirdView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/BirdView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/MainView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,19 +25,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6c5c3dcdf51c4eb8916af6dcb8f91b631df48/6a/71104e4e/KeyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/90ee3cbb9dbb439fb2a3106cefde0581564d90/5f/f657aca9/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f45d9876cc6a4d6786f46b3d3a345d69604f90/80/87d177c0/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f45d9876cc6a4d6786f46b3d3a345d69604f90/a2/a7163843/Selector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/288e1d2a7e89c10e3862bacfd4d8f8ed37612ce4d7066979233c235d0304151/ParameterExtractingExpressionVisitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/736a3a04d875d2a8d23425b8eb6bce34906e52a77dd168bf55f671990672/QueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99f34ec5afd41f934c9189792e189b0fc486f6cfb7716f14f8e1aed88784/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,7 +50,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -93,7 +92,9 @@
       <workItem from="1670877482155" duration="8516000" />
       <workItem from="1670930373338" duration="8089000" />
       <workItem from="1671265528719" duration="14307000" />
-      <workItem from="1671306613128" duration="14572000" />
+      <workItem from="1671306613128" duration="14713000" />
+      <workItem from="1671353530560" duration="8429000" />
+      <workItem from="1671362083389" duration="9880000" />
     </task>
     <servers />
   </component>
@@ -121,19 +122,40 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
-          <line>19</line>
-          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="17" containingFunctionPresentation="property 'SelectedBird'">
+          <line>16</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="16" containingFunctionPresentation="property 'SelectedBird'">
             <startOffsets>
-              <option value="590" />
-              <option value="595" />
+              <option value="503" />
+              <option value="508" />
             </startOffsets>
             <endOffsets>
-              <option value="594" />
-              <option value="599" />
+              <option value="507" />
+              <option value="512" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="24" containingFunctionPresentation="property 'Logbooks'">
+            <startOffsets>
+              <option value="858" />
+              <option value="863" />
+            </startOffsets>
+            <endOffsets>
+              <option value="862" />
+              <option value="867" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="System.FormatException" isInternal="false" displayValue="FormatException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

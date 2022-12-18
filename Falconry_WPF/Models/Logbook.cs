@@ -13,10 +13,13 @@ namespace Falconry_WPF.Models
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
         public int Weight { get; set; }
-        public int FoodAmount { get; set; }
+        public int WeightAfter { get; set; }
+        public string FoodAmount { get; set; }
         public bool Vitamins { get; set; }
         public string Activity { get; set; }
         public string Comment { get; set; }
-        public User User { get; set; }
+
+        // A logbook belongs to one bird
+        public int BirdId { get; set; }
     }
 }

@@ -14,6 +14,11 @@ namespace Falconry_WPF.Models
         public string Name { get; set; }
         public string Breed { get; set; }
         public string Latin { get; set; }
-        public User User { get; set; }
+        
+        // A can have  has multiple logbooks
+        public ICollection<Logbook> Logbooks { get; set; }
+        
+        // A bird has one owner
+        public int UserId { get; set; }
     }
 }

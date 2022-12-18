@@ -62,6 +62,16 @@
                     </Grid>
                 </Menu:Button>
             </StackPanel>
+            
+            <StackPanel VerticalAlignment="Bottom">
+                <!-- Logout -->
+                <Menu:Button Style="{StaticResource BtnStyle}" Command="{Binding LogoutCommand}">
+                    <Grid>
+                        <Image Source="/Assets/Images/logout.png" Style="{StaticResource Image_Style}"/>
+                        <TextBlock Text="Logout" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+                </Menu:Button>
+            </StackPanel>
         </Grid>
         
         <Grid Grid.Column="1">
