@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4ac743-30a7-4691-a020-1910a068754f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Views/test.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/test.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Falconry_WPF.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/LoginViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Falconry_WPF.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Falconry_WPF.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/BirdViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ViewModels/NavigationViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/MainView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/MainView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/BirdView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/BirdView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,7 @@
       <workItem from="1670877482155" duration="8516000" />
       <workItem from="1670930373338" duration="8089000" />
       <workItem from="1671265528719" duration="14307000" />
-      <workItem from="1671306613128" duration="2683000" />
+      <workItem from="1671306613128" duration="14572000" />
     </task>
     <servers />
   </component>
@@ -117,32 +120,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ViewModels/NavigationViewModel.cs</url>
-          <line>15</line>
-          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\NavigationViewModel.cs" initialLine="15" containingFunctionPresentation="property 'u'">
+          <url>file://$PROJECT_DIR$/ViewModels/BirdViewModel.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\BirdViewModel.cs" initialLine="17" containingFunctionPresentation="property 'SelectedBird'">
             <startOffsets>
-              <option value="436" />
+              <option value="590" />
+              <option value="595" />
             </startOffsets>
             <endOffsets>
-              <option value="440" />
+              <option value="594" />
+              <option value="599" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ViewModels/NavigationViewModel.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\Users\vansa\Desktop\falconry_desktop_app\Falconry_WPF\ViewModels\NavigationViewModel.cs" initialLine="45" containingFunctionPresentation="constructor 'NavigationViewModel'">
-            <startOffsets>
-              <option value="1347" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1361" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#Falconry_WPF.ViewModels.BirdViewModel" memberName="Birds" />
+        <PinnedItemInfo parentTag="Type#Falconry_WPF.ViewModels.BirdViewModel" memberName="Name" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

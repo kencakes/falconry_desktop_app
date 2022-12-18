@@ -36,7 +36,7 @@ namespace Falconry_WPF.ViewModels
         
 
         private void Home(object obj) => CurrentView = new HomeViewModel();
-        private void Bird(object obj) => CurrentView = new BirdViewModel();
+        private void Bird(object obj) => CurrentView = new BirdViewModel(User);
         private void Hunting(object obj) => CurrentView = new HuntingViewModel();
         private void Logbook(object obj) => CurrentView = new LogbookViewModel();
 

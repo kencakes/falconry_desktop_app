@@ -6,12 +6,45 @@
              xmlns:vm="clr-namespace:Falconry_WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800 Style={StaticResource Page_Style}" Style="{StaticResource Page_Style}">
-    <UserControl.DataContext>
-        <vm:BirdViewModel/>
-    </UserControl.DataContext>
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Bird Page"></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel >
+            <DataGrid x:Name="DataGridBirds" AutoGenerateColumns="False" ItemsSource="{Binding Birds}" SelectedItem="{Binding SelectedBird}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Breed}" Header="Breed" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding Latin}" Header="Latin" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
+        
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Name" VerticalAlignment="Top" FontSize="14" Foreground="#ffffff"/>
+        <TextBox Grid.Row="2" Grid.Column="0" x:Name="NameTb"  Text="{Binding SelectedBird.Name}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        
+        <Label Grid.Row="1" Grid.Column="1" Content="Breed" VerticalAlignment="Top" FontSize="14" Foreground="#ffffff"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="BreedTb"  Text="{Binding SelectedBird.Breed}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        
+        <Label Grid.Row="1" Grid.Column="2" Content="Latin" VerticalAlignment="Top" FontSize="14" Foreground="#ffffff"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="LatinTb"  Text="{Binding SelectedBird.Latin}" Foreground="#ffffff" Background="#272B2F" Margin="5"/>
+        
+        <Button Grid.Row="2" Grid.Column="3" x:Name="AddBtn" Content="Add Bird" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=AddBirdCommand}" Margin="5"/>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="DeleteBtn" Content="Delete" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=DeleteBirdCommand}" Margin="5"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="UpdateBtn" Content="Update" Background="#272B2F" Foreground="#ffffff" BorderThickness="1" Command="{Binding Path=UpdateBirdCommand}" Margin="5"/>
+
     </Grid>
 </UserControl>
